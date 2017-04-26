@@ -11,7 +11,8 @@ class BlogsPost(models.Model):
 	title = models.CharField(max_length = 150)
 	body = models.TextField()
 	timestamp = models.DateTimeField()
-
+	class Meta:
+		ordering = ['-timestamp']
 #继承 admin.ModelAdmin父类 显示BlogPost 的title time 
 class BlogPostAdmin(admin.ModelAdmin):
 	list_display = ('title','timestamp')
